@@ -67,6 +67,8 @@ RUN yum -y module enable ruby:$RUBY_VERSION && \
 
 # Install Discourse Dependencies
 RUN dnf install -y postgresql ImageMagick brotli; yum clean all
+RUN curl -fsSL https://rpm.nodesource.com/setup_15.x | sudo bash -
+EUN yum install -y nodejs npm nodejs-nodemon nss_wrapper
 RUN npm install -g uglify-js && npm install -g svgo
 RUN rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg && \
     curl -sL https://dl.yarnpkg.com/rpm/yarn.repo -o /etc/yum.repos.d/yarn.repo && \
