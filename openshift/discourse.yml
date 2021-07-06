@@ -92,10 +92,6 @@ objects:
     strategy:
       dockerStrategy:
         noCache: true
-      sourceStrategy:
-        env:
-          - name: BUNDLER_VERSION
-            value: ${BUNDLER_VERSION}
       triggers:
       - type: ImageChange
       - type: ConfigChange
@@ -678,9 +674,9 @@ parameters:
 
 - description: Version of Python image to be used (3.6 or latest).
   displayName: Version of Python Image
-  name: BUNDLER_VERSION
+  name: PYTHON_VERSION
   required: true
-  value: '2.2.16'
+  value: '3.6'
 
 - description: Version of PostgreSQL image to be used (10 or latest).
   displayName: Version of PostgreSQL Image
