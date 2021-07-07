@@ -19,7 +19,7 @@ if [ -n "$RUBYGEM_MIRROR" ]; then
   bundle config mirror.https://rubygems.org $RUBYGEM_MIRROR
 fi
 
-if [ -n "BUNDLER_VERSION" ]; then
+if [ -n "$BUNDLER_VERSION" ]; then
   gem install bundler:${BUNDLER_VERSION}
 fi
 
